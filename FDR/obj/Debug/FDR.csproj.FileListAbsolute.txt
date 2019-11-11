@@ -70,3 +70,4 @@ C:\Users\Nam\Source\Repos\FDR\FDR\obj\Debug\FDR.csproj.CoreCompileInputs.cache
 C:\Users\Nam\Source\Repos\FDR\FDR\obj\Debug\FDR.csproj.CopyComplete
 C:\Users\Nam\Source\Repos\FDR\FDR\obj\Debug\FDR.exe
 C:\Users\Nam\Source\Repos\FDR\FDR\obj\Debug\FDR.pdb
+C:\Users\Nam\Source\Repos\FDR\FDR\obj\Debug\FDR_Content.g.cs

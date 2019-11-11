@@ -10,14 +10,15 @@ namespace FDR.Repositories.Implement
 {
     public class BaseRepositories<T> : IBase<T> where T : class
     {
+
+        private DbSet<T> table = null;
+
+        private readonly DbEntities db;
         public BaseRepositories()
         {
-            using (var db = new DbEntities())
-            {
-                table = db.Set<T>();
-            }
+            db = new DbEntities();
+            table = db.Set<T>();
         }
-        private DbSet<T> table = null;
 
         public bool Delete(object id)
         {
@@ -35,7 +36,9 @@ namespace FDR.Repositories.Implement
 
         public IEnumerable<T> GetAll()
         {
-            return table.ToList();
+            
+             return table.ToList();
+           
         }
 
         public T GetById(object id)
