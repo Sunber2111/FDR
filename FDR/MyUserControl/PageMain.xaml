@@ -5,11 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FDR.MyUserControl"
              mc:Ignorable="d" 
-             MinHeight="550" 
-             MinWidth="800">
+             Height="650" 
+             Width="1000">
     <Grid
-        Background="#FFFFFF"
-        Margin="20">
+        VerticalAlignment="Top"
+        Margin="20 40 20 0"
+        Background="#FFFFFF">
         <Image
             
             HorizontalAlignment="Left"
@@ -22,7 +23,7 @@
             HorizontalAlignment="Center"
             FontSize="40"
             FontWeight="DemiBold"
-            Text="About us" Margin="785,299,126.2,415.8" Width="196" Height="58" />
+            Text="About us" Margin="684,216,53,334.6" Width="223" Height="59" />
         <TextBlock
             TextWrapping="WrapWithOverflow"
             VerticalAlignment="Center"
@@ -30,6 +31,6 @@
             Foreground="#4C4C4C"
             FontSize="14"
             Text="For over 10 years Creatio have been building and deploying digital products for clients around Australia and the world (even Arnhem Land). We're experienced, dedicated and always passionate about our work. Find out more" 
-            Height="156" Width="275" Margin="785,362,47.2,254.8"/>
+            Height="156" Width="243" Margin="684,280,33,173.6"/>
     </Grid>
 </UserControl>

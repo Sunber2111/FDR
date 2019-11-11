@@ -65,6 +65,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\MonHocModel.cs" />
+    <Compile Include="MyUserControl\PagePerson.xaml.cs">
+      <DependentUpon>PagePerson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\Implement\SubjectRepository.cs" />
+    <Compile Include="Repositories\Interface\IBase.cs" />
+    <Compile Include="Repositories\Interface\ISubject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginWindow.xaml.cs">
@@ -78,6 +85,9 @@
     </Compile>
     <Compile Include="MyUserControl\PageMain.xaml.cs">
       <DependentUpon>PageMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\PageSubject.xaml.cs">
+      <DependentUpon>PageSubject.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -122,6 +132,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyUserControl\PagePerson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyUserControl\PageSubject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.jpeg" />
@@ -132,5 +154,6 @@
   <ItemGroup>
     <Resource Include="Images\logo2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

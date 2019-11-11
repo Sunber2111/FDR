@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:FDR"
         xmlns:myUC="clr-namespace:FDR.MyUserControl"
         WindowStartupLocation="CenterScreen"
-        Padding="0"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Height="700" Width="1060" 
+        Height="700" Width="1160" 
         WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -228,7 +227,11 @@
 
             <Grid>
 
-                <Grid>
+                <ScrollViewer
+                    VerticalContentAlignment="Top"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Visible">
+                    <Grid VerticalAlignment="Top">
 
                     <materialDesign:Transitioner x:Name="Slide"
                                              SelectedIndex="0">
@@ -261,10 +264,41 @@
                             <myUC:PageAttendance/>
 
                         </materialDesign:TransitionerSlide>
+
+                        <!--PageSubject-->
+                        <materialDesign:TransitionerSlide>
+                            <materialDesign:TransitionerSlide.OpeningEffects>
+                                <materialDesign:TransitionEffect
+                                                Kind="FadeIn"
+                                                Duration="0:0:1" />
+                                <materialDesign:TransitionEffect
+                                                Kind="SlideInFromBottom"
+                                                Duration="0:0:0.7" />
+                            </materialDesign:TransitionerSlide.OpeningEffects>
+
+                            <myUC:PageSubject/>
+
+                        </materialDesign:TransitionerSlide>
+
+                        <!--Person-->
+                        <materialDesign:TransitionerSlide>
+                            <materialDesign:TransitionerSlide.OpeningEffects>
+                                <materialDesign:TransitionEffect
+                                                Kind="FadeIn"
+                                                Duration="0:0:1" />
+                                <materialDesign:TransitionEffect
+                                                Kind="ExpandIn"
+                                                Duration="0:0:0.7" />
+                            </materialDesign:TransitionerSlide.OpeningEffects>
+
+                            <myUC:PagePerson/>
+
+                        </materialDesign:TransitionerSlide>
+
                     </materialDesign:Transitioner>
 
                 </Grid>
-                
+                </ScrollViewer>
                 
                 <Grid Height="40"
                       HorizontalAlignment="Right"

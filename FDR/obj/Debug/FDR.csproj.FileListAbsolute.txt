@@ -27,3 +27,8 @@ C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PageAttendance.g.cs
 C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PageAttendance.baml
 C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PageMain.baml
+C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PagePerson.g.cs
+C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PageSubject.g.cs
+C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PageSubject.baml
+C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\MyUserControl\PagePerson.baml

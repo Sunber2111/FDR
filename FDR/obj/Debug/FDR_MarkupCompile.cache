@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Nam\Desktop\FDR\FDR\App.xaml
-4192118421
+71132480570
 
-8875524351
+15430468816
 15-1969051659
-LoginWindow.xaml;MainWindow.xaml;MyUserControl\PageAttendance.xaml;MyUserControl\PageMain.xaml;
+LoginWindow.xaml;MainWindow.xaml;MyUserControl\PageAttendance.xaml;MyUserControl\PageMain.xaml;MyUserControl\PagePerson.xaml;MyUserControl\PageSubject.xaml;ResourceXAML\MainResource.xaml;
 
-False
+True
 
