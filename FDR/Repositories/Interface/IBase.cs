@@ -8,12 +8,15 @@ namespace FDR.Repositories.Interface
 {
     public interface IBase<T> where T : class
     {
-        bool Insert(T objectEntity);
+        bool Insert(T obj);
 
-        bool Update(T objectEntity);
+        bool Update(T obj);
+
+        bool Delete(object id);
 
         IEnumerable<T> GetAll();
 
+        T GetById(object id);
 
     }
 }

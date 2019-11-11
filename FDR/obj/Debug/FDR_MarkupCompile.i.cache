@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Nam\Desktop\FDR\FDR\obj\Debug\
+C:\Users\Nam\Source\Repos\FDR\FDR\obj\Debug\
 FDR
 none
 false
 DEBUG;TRACE
-C:\Users\Nam\Desktop\FDR\FDR\App.xaml
+C:\Users\Nam\Source\Repos\FDR\FDR\App.xaml
 71132480570
-
-15430468816
-15-1969051659
+2-1817397698
+27-1163348056
+201679516342
 LoginWindow.xaml;MainWindow.xaml;MyUserControl\PageAttendance.xaml;MyUserControl\PageMain.xaml;MyUserControl\PagePerson.xaml;MyUserControl\PageSubject.xaml;ResourceXAML\MainResource.xaml;
 
-True
+False
 
