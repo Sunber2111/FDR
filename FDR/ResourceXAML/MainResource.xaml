@@ -3,8 +3,11 @@
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:viewmodel="clr-namespace:FDR.ViewModel"
                     xmlns:local="clr-namespace:FDR.ResourceXAML">
-    <viewmodel:MainViewModel x:Key="MainVM"/>
     
+    <viewmodel:MainViewModel x:Key="MainVM"/>
+
+    <viewmodel:SubjectViewModel x:Key="SubVM"/>
+
     <Style x:Key="ListViewItemStyle1" TargetType="{x:Type ListViewItem}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>

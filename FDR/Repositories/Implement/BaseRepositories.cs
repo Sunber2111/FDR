@@ -11,21 +11,19 @@ namespace FDR.Repositories.Implement
     public class BaseRepositories<T> : IBase<T> where T : class
     {
 
-        private DbSet<T> table = null;
-
         private readonly DbEntities db;
         public BaseRepositories()
         {
             db = new DbEntities();
-            table = db.Set<T>();
         }
 
         public bool Delete(object id)
         {
             try
             {
-                T obj = table.Find(id);
-                table.Remove(obj);
+                T obj = db.Set<T>().Find(id);
+                db.Set<T>().Remove(obj);
+                db.SaveChanges();
                 return true;
             }
             catch
@@ -37,25 +35,26 @@ namespace FDR.Repositories.Implement
         public IEnumerable<T> GetAll()
         {
             
-             return table.ToList();
+             return db.Set<T>().ToList();
            
         }
 
         public T GetById(object id)
         {
-            return table.Find(id);
+            return db.Set<T>().Find(id);
         }
 
-        public bool Insert(T obj)
+        public T Insert(T obj)
         {
             try
             {
-                table.Add(obj);
-                return true;
+                db.Set<T>().Add(obj);
+                db.SaveChanges();
+                return obj;
             }
             catch
             {
-                return false;
+                return null;
             }
         }
 
@@ -63,17 +62,20 @@ namespace FDR.Repositories.Implement
         {
             try
             {
-               using(var db = new DbEntities())
-               {
-                    table.Attach(obj);
-                    db.Entry(obj).State = EntityState.Modified;
-               }
+                db.Set<T>().Attach(obj);
+                db.Entry(obj).State = EntityState.Modified;
+                db.SaveChanges();
                 return true;
             }
             catch
             {
                 return false;
             }
+        }
+
+        public IEnumerable<T> GetMany(Func<T, bool> where)
+        {
+            return db.Set<T>().Where(where).ToList();
         }
     }
 }

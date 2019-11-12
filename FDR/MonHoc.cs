@@ -22,6 +22,7 @@ namespace FDR
     
         public string MaMonHoc { get; set; }
         public string TenMonHoc { get; set; }
+        public Nullable<int> SoTinChi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HocPhan> HocPhans { get; set; }

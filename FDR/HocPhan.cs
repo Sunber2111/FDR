@@ -21,7 +21,6 @@ namespace FDR
         }
     
         public string Khoa { get; set; }
-        public Nullable<int> SoTinChi { get; set; }
         public string MaHocPhan { get; set; }
         public string MaMonHoc { get; set; }
         public string TenChuyenNganh { get; set; }

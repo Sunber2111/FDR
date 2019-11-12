@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FDR.MyUserControl"
              mc:Ignorable="d" 
+             DataContext="{StaticResource SubVM}"
              FontFamily="Segoe UI"
               Background="#FFFFFF"
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -54,6 +55,7 @@
                                 Margin="40 0 0 0"/>
 
                             <TextBox
+                                Text="{Binding KeySub,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                                 FontSize="16"
                                 TextWrapping="WrapWithOverflow"
                                 Foreground="Black"
@@ -179,31 +181,29 @@
                         
 
                     </Grid>
-                    
+
 
                     <Grid
-                        Height="60">
+                        Height="100">
 
                         <TextBlock
-                            Margin="20 0 0 0"
                             FontSize="17"
                             FontWeight="DemiBold"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Text="Mã Môn Học : "/>
+                            Margin="20 10 0 0"
+                            Text="Mã Môn Học"/>
 
-                        <TextBlock
-                            Foreground="#F44336"
-                            Margin="20 0 0 0"
-                            FontSize="23"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Text="1"/>
-
+                        <TextBox
+                            Margin="20 0"
+                            Text="{Binding MaMonHoc,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                            TextWrapping="WrapWithOverflow"
+                            Foreground="Black"
+                            Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                            Height="60"
+                            VerticalAlignment="Bottom">
+                        </TextBox>
                     </Grid>
-                    
+
                     <Grid
-                        Margin="0 40 0 0"
                         Height="100">
 
                         <TextBlock
@@ -214,6 +214,7 @@
 
                         <TextBox
                             Margin="20 0"
+                            Text="{Binding TenMonHoc,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                             TextWrapping="WrapWithOverflow"
                             Foreground="Black"
                             Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
@@ -223,7 +224,6 @@
                     </Grid>
 
                     <Grid
-                        Margin="0 40 0 0"
                         Height="100">
 
                         <TextBlock
@@ -233,6 +233,7 @@
                             Text="Số Tín Chỉ"/>
 
                         <TextBox
+                            Text="{Binding SoTinChi,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                             Margin="20 0"
                             TextWrapping="WrapWithOverflow"
                             Foreground="Black"
@@ -247,6 +248,7 @@
                         Height="40">
 
                         <Button
+                            Command="{Binding RefeshData1}"
                             Margin="20 0 0 0"
                             BorderBrush="{x:Null}"
                             HorizontalAlignment="Left"
@@ -254,7 +256,7 @@
                             <materialDesign:PackIcon
                                     Kind="Refresh"
                                     Height="24"
-                                    Width="24" Foreground="#FFD5EA34" />
+                                    Width="24" />
                         </Button>
                         
                     </Grid>
@@ -272,6 +274,7 @@
                         <Grid Grid.Column="0">
 
                             <Button 
+                                Command="{Binding ThemMonHoc}"
                                 Height="40"
                                 Padding="0"
                                 BorderBrush="{x:Null}"

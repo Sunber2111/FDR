@@ -7,6 +7,7 @@
     <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Passwords" Type="varchar" MaxLength="50" />
     <Property Name="Role_" Type="int" />
+    <Property Name="MaGiangVien" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="ChuyenNganh">
     <Key>
@@ -33,14 +34,12 @@
     <Property Name="Email" Type="nvarchar(max)" />
     <Property Name="HocVi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenChuyenNganh" Type="nvarchar" MaxLength="50" />
-    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="HocPhan">
     <Key>
       <PropertyRef Name="MaHocPhan" />
     </Key>
     <Property Name="Khoa" Type="nvarchar" MaxLength="50" />
-    <Property Name="SoTinChi" Type="int" />
     <Property Name="MaHocPhan" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="MaMonHoc" Type="varchar" MaxLength="20" />
     <Property Name="TenChuyenNganh" Type="nvarchar" MaxLength="50" />
@@ -71,6 +70,7 @@
     </Key>
     <Property Name="MaMonHoc" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="TenMonHoc" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="SoTinChi" Type="int" />
   </EntityType>
   <EntityType Name="SinhVien">
     <Key>
@@ -92,14 +92,14 @@
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Account_UngVoi_GiangVien">
-    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
-    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="*" />
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Account">
-        <PropertyRef Name="UserName" />
+      <Principal Role="GiangVien">
+        <PropertyRef Name="MaGiangVien" />
       </Principal>
-      <Dependent Role="GiangVien">
-        <PropertyRef Name="UserName" />
+      <Dependent Role="Account">
+        <PropertyRef Name="MaGiangVien" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -223,8 +223,8 @@
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Account_UngVoi_GiangVien" Association="Self.FK_Account_UngVoi_GiangVien">
-      <End Role="Account" EntitySet="Account" />
       <End Role="GiangVien" EntitySet="GiangVien" />
+      <End Role="Account" EntitySet="Account" />
     </AssociationSet>
     <AssociationSet Name="FK_GiangVien_Day_LopHocPhan" Association="Self.FK_GiangVien_Day_LopHocPhan">
       <End Role="GiangVien" EntitySet="GiangVien" />

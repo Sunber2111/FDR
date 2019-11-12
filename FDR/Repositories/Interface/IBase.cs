@@ -8,7 +8,7 @@ namespace FDR.Repositories.Interface
 {
     public interface IBase<T> where T : class
     {
-        bool Insert(T obj);
+        T Insert(T obj);
 
         bool Update(T obj);
 
@@ -17,6 +17,8 @@ namespace FDR.Repositories.Interface
         IEnumerable<T> GetAll();
 
         T GetById(object id);
+
+        IEnumerable<T> GetMany(Func<T, bool> where);
 
     }
 }

@@ -118,12 +118,18 @@
       <DependentUpon>PagePerson.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repositories\Implement\BaseRepositories.cs" />
+    <Compile Include="Repositories\Implement\DangKiRepositories.cs" />
     <Compile Include="Repositories\Interface\IBase.cs" />
+    <Compile Include="Repositories\Interface\IDangKi.cs" />
     <Compile Include="SinhVien.cs">
+      <DependentUpon>DbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SubjectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginWindow.xaml.cs">
