@@ -17,6 +17,7 @@ namespace FDR
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GiangVien()
         {
+            this.Accounts = new HashSet<Account>();
             this.LopHocPhans = new HashSet<LopHocPhan>();
         }
     
@@ -25,9 +26,9 @@ namespace FDR
         public string Email { get; set; }
         public string HocVi { get; set; }
         public string TenChuyenNganh { get; set; }
-        public string UserName { get; set; }
     
-        public virtual Account Account { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Account> Accounts { get; set; }
         public virtual ChuyenNganh ChuyenNganh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHocPhan> LopHocPhans { get; set; }

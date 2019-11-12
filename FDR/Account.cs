@@ -14,17 +14,11 @@ namespace FDR
     
     public partial class Account
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
-        {
-            this.GiangViens = new HashSet<GiangVien>();
-        }
-    
         public string UserName { get; set; }
         public string Passwords { get; set; }
         public Nullable<int> Role_ { get; set; }
+        public string MaGiangVien { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GiangVien> GiangViens { get; set; }
+        public virtual GiangVien GiangVien { get; set; }
     }
 }

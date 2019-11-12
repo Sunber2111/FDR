@@ -11,9 +11,12 @@ namespace FDR.ViewModel
 {
     public class MainViewModel:BaseViewModel
     {
+        //khai báo interface account 
         private IBase<Account> repo = null;
+
         public MainViewModel()
         {
+            //khởi tạo thằng implement của account
             repo = new BaseRepositories<Account>();
 
             // lấy ds :
