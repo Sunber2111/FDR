@@ -190,7 +190,7 @@ namespace FDR.ViewModel
                       if (result != null)
                           MessageBox.Show("OK");
                       else
-                          MessageBox.Show("Fail");
+                          MessageBox.Show("Fails");
 
                   }
                 );
