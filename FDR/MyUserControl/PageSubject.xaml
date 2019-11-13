@@ -317,6 +317,7 @@
                         <Grid Grid.Column="1">
 
                             <Button 
+                                Command="{Binding SuaMonHoc}"
                                 Height="40"
                                 Padding="0"
                                 BorderBrush="{x:Null}"
@@ -359,6 +360,7 @@
                         <Grid Grid.Column="2">
 
                             <Button 
+                                Command="{Binding XoaMonHoc}"
                                 Height="40"
                                 Padding="0"
                                 BorderBrush="{x:Null}"

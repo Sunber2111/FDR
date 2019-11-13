@@ -5,9 +5,7 @@
       <PropertyRef Name="UserName" />
     </Key>
     <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Passwords" Type="varchar" MaxLength="50" />
-    <Property Name="Role_" Type="int" />
-    <Property Name="MaGiangVien" Type="varchar" MaxLength="10" />
+    <Property Name="Passwords" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="ChuyenNganh">
     <Key>
@@ -34,6 +32,8 @@
     <Property Name="Email" Type="nvarchar(max)" />
     <Property Name="HocVi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenChuyenNganh" Type="nvarchar" MaxLength="50" />
+    <Property Name="Passwords" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="HocPhan">
     <Key>
@@ -81,28 +81,6 @@
     <Property Name="HoDem" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="TenLop" Type="nvarchar" MaxLength="20" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
-  <Association Name="FK_Account_UngVoi_GiangVien">
-    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
-    <End Role="Account" Type="Self.Account" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiangVien">
-        <PropertyRef Name="MaGiangVien" />
-      </Principal>
-      <Dependent Role="Account">
-        <PropertyRef Name="MaGiangVien" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_GiangVien_Day_LopHocPhan">
     <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
     <End Role="LopHocPhan" Type="Self.LopHocPhan" Multiplicity="*" />
@@ -221,11 +199,6 @@
     <EntitySet Name="LopHocPhan" EntityType="Self.LopHocPhan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Account_UngVoi_GiangVien" Association="Self.FK_Account_UngVoi_GiangVien">
-      <End Role="GiangVien" EntitySet="GiangVien" />
-      <End Role="Account" EntitySet="Account" />
-    </AssociationSet>
     <AssociationSet Name="FK_GiangVien_Day_LopHocPhan" Association="Self.FK_GiangVien_Day_LopHocPhan">
       <End Role="GiangVien" EntitySet="GiangVien" />
       <End Role="LopHocPhan" EntitySet="LopHocPhan" />

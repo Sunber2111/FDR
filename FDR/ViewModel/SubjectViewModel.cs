@@ -149,6 +149,9 @@ namespace FDR.ViewModel
         public ICommand RefeshData1 { get; set; }
         public ICommand ThemMonHoc { get; set; }
 
+        public ICommand SuaMonHoc { get; set; }
+
+        public ICommand XoaMonHoc { get; set; }
 
         public SubjectViewModel()
         {
@@ -180,7 +183,12 @@ namespace FDR.ViewModel
                 (
                   (p) =>
                   {
-                      
+                      if (string.IsNullOrEmpty(MaMonHoc))
+                          return false;
+                      if (string.IsNullOrEmpty(SoTinChi))
+                          return false;
+                      if (string.IsNullOrEmpty(TenMonHoc))
+                          return false;
                       return true;
                   },
                   (p)=>
@@ -188,14 +196,63 @@ namespace FDR.ViewModel
                       var data = new MonHoc() { MaMonHoc = MaMonHoc, SoTinChi = Convert.ToInt32(SoTinChi), TenMonHoc = TenMonHoc };
                       var result = _repoMH.Insert(data);
                       if (result != null)
+                      {
                           MessageBox.Show("OK");
+                          ListSubject.Add(result);
+                      }
+
                       else
                           MessageBox.Show("Fails");
 
                   }
                 );
+            SuaMonHoc = new RelayCommand<object>
+                (
+                  (p) =>
+                  {
+                      if (string.IsNullOrEmpty(MaMonHoc))
+                          return false;
+                      if (string.IsNullOrEmpty(SoTinChi))
+                          return false;
+                      if (string.IsNullOrEmpty(TenMonHoc))
+                          return false;
+                      return true;
+                  },
+                  (p) =>
+                  {
+                      var data = new MonHoc() { MaMonHoc = MaMonHoc, SoTinChi = Convert.ToInt32(SoTinChi), TenMonHoc = TenMonHoc };
 
+                      if (_repoMH.Update(data))
+                      {
+                          MessageBox.Show("OK");
+                          ListSubject.SingleOrDefault(t => t.MaMonHoc.Equals(SelectedSub.MaMonHoc)).TenMonHoc = TenMonHoc;
+                          ListSubject.SingleOrDefault(t => t.MaMonHoc.Equals(SelectedSub.MaMonHoc)).SoTinChi = Convert.ToInt32(SoTinChi);
+                      }
+                      else
+                          MessageBox.Show("Fails");
 
+                  }
+                );
+            XoaMonHoc = new RelayCommand<object>
+                (
+                  (p) =>
+                  {
+                      if (string.IsNullOrEmpty(MaMonHoc))
+                          return false;
+                      return true;
+                  },
+                  (p) =>
+                  {
+                      if (_repoMH.Delete(MaMonHoc))
+                      {
+                          MessageBox.Show("OK");
+                          ListSubject.Remove(ListSubject.SingleOrDefault(t => t.MaMonHoc.Equals(SelectedSub.MaMonHoc)));
+                      }
+                      else
+                          MessageBox.Show("Fails");
+
+                  }
+                );
         }
     }
 }

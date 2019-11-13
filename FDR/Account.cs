@@ -16,9 +16,5 @@ namespace FDR
     {
         public string UserName { get; set; }
         public string Passwords { get; set; }
-        public Nullable<int> Role_ { get; set; }
-        public string MaGiangVien { get; set; }
-    
-        public virtual GiangVien GiangVien { get; set; }
     }
 }

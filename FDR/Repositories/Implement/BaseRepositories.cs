@@ -11,10 +11,13 @@ namespace FDR.Repositories.Implement
     public class BaseRepositories<T> : IBase<T> where T : class
     {
 
-        private readonly DbEntities db;
+        private DbEntities db;
+
+        DbSet<T> dbSet;
         public BaseRepositories()
         {
             db = new DbEntities();
+            dbSet = db.Set<T>();
         }
 
         public bool Delete(object id)
@@ -60,10 +63,10 @@ namespace FDR.Repositories.Implement
 
         public bool Update(T obj)
         {
+            db = new DbEntities();
             try
             {
-                db.Set<T>().Attach(obj);
-                db.Entry(obj).State = EntityState.Modified;
+                db.Entry<T>(obj).State = EntityState.Modified;
                 db.SaveChanges();
                 return true;
             }
@@ -71,6 +74,7 @@ namespace FDR.Repositories.Implement
             {
                 return false;
             }
+
         }
 
         public IEnumerable<T> GetMany(Func<T, bool> where)

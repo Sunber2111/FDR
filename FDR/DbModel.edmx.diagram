@@ -4,27 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="be92d3c10f5549f4840f5c6b3efb6f28" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="FR_DbModel.Account" Width="1.5" PointX="9.375" PointY="8.75" />
-        <EntityTypeShape EntityType="FR_DbModel.ChuyenNganh" Width="1.5" PointX="4.875" PointY="6.625" />
-        <EntityTypeShape EntityType="FR_DbModel.DangKyLopHocPhan" Width="1.5" PointX="15" PointY="8.25" />
-        <EntityTypeShape EntityType="FR_DbModel.GiangVien" Width="1.5" PointX="7.125" PointY="4.75" />
-        <EntityTypeShape EntityType="FR_DbModel.HocPhan" Width="1.5" PointX="7.125" PointY="8.375" />
-        <EntityTypeShape EntityType="FR_DbModel.Lop" Width="1.5" PointX="7.125" PointY="12.25" />
-        <EntityTypeShape EntityType="FR_DbModel.LopHocPhan" Width="1.5" PointX="9.375" PointY="4.625" />
-        <EntityTypeShape EntityType="FR_DbModel.MonHoc" Width="1.5" PointX="4.875" PointY="9.625" />
-        <EntityTypeShape EntityType="FR_DbModel.SinhVien" Width="1.5" PointX="9.375" PointY="12.25" />
-        <EntityTypeShape EntityType="FR_DbModel.sysdiagram" Width="1.5" PointX="4.875" PointY="1" />
-        <AssociationConnector Association="FR_DbModel.FK_Account_UngVoi_GiangVien" />
-        <AssociationConnector Association="FR_DbModel.FK_GiangVien_ThuocTrong_ChuyenNganh" />
-        <AssociationConnector Association="FR_DbModel.FK_HocPhan_Thuoc_ChuyenNghanh" />
-        <AssociationConnector Association="FR_DbModel.FK_Lop_ThuocTrong_ChuyenNganh" />
-        <AssociationConnector Association="FR_DbModel.FK_LopHocPhan_DangKyLopHocPhan" />
-        <AssociationConnector Association="FR_DbModel.FK_SinhVien_DangKy_LopHocPhan" />
-        <AssociationConnector Association="FR_DbModel.FK_GiangVien_Day_LopHocPhan" />
-        <AssociationConnector Association="FR_DbModel.FK_HocPhan_UngVoi_MonHoc" />
-        <AssociationConnector Association="FR_DbModel.FK_LopHocPhan_ThuocTrong_HocPhan" />
-        <AssociationConnector Association="FR_DbModel.FK_SinhVien_ThuocTrong_Lop" />
+      <Diagram DiagramId="4555becfe814493f9f3194f495ca8c6e" Name="Diagram1">
+        <EntityTypeShape EntityType="FR_DbModel.Account" Width="1.5" PointX="2.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.ChuyenNganh" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.DangKyLopHocPhan" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.GiangVien" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.HocPhan" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.Lop" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.LopHocPhan" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.MonHoc" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FR_DbModel.SinhVien" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="FR_DbModel.FK_GiangVien_ThuocTrong_ChuyenNganh" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_HocPhan_Thuoc_ChuyenNghanh" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_Lop_ThuocTrong_ChuyenNganh" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_LopHocPhan_DangKyLopHocPhan" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_SinhVien_DangKy_LopHocPhan" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_GiangVien_Day_LopHocPhan" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_HocPhan_UngVoi_MonHoc" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_LopHocPhan_ThuocTrong_HocPhan" ManuallyRouted="false" />
+        <AssociationConnector Association="FR_DbModel.FK_SinhVien_ThuocTrong_Lop" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
